@@ -73,25 +73,25 @@ const Contact: React.FC = () => {
     {
       icon: '📧',
       title: 'Email',
-      value: 'dhana@example.com',
+      value: 'dhananjaya2859dk@gmail.com',
       link: 'mailto:dhana@example.com'
     },
     {
       icon: '📱',
       title: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+94 716324240',
       link: 'tel:+15551234567'
     },
     {
       icon: '📍',
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Kandy, Sri Lanka',
       link: '#'
     }
   ];
 
   const socialLinks: SocialLink[] = [
-    { name: 'LinkedIn', icon: '💼', url: 'https://linkedin.com' },
+    { name: 'LinkedIn', icon: '💼', url: 'https://www.linkedin.com/in/dhananjaya-bulumulla-777a6723b' },
     { name: 'Dribbble', icon: '🏀', url: 'https://dribbble.com' },
     { name: 'Behance', icon: '🎨', url: 'https://behance.net' },
     { name: 'Twitter', icon: '🐦', url: 'https://twitter.com' }

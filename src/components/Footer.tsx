@@ -24,13 +24,13 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
-            <h3>Dhana</h3>
+            <h3>Dhananjaya</h3>
             <p className="footer-description">
               Passionate UI/UX designer creating beautiful, functional, and user-centered digital experiences. 
               Let's bring your ideas to life with innovative design solutions.
             </p>
             <div className="footer-social">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-social-link">
+              <a href="https://www.linkedin.com/in/dhananjaya-bulumulla-777a6723b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-social-link">
                 💼
               </a>
               <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" aria-label="Dribbble" className="footer-social-link">
@@ -72,19 +72,19 @@ const Footer: React.FC = () => {
             <div className="footer-contact-item">
               <div className="footer-contact-icon">📧</div>
               <div className="footer-contact-text">
-                <div>dhana@example.com</div>
+                <div>dhananjaya2859dk@gmail.com</div>
               </div>
             </div>
             <div className="footer-contact-item">
               <div className="footer-contact-icon">📱</div>
               <div className="footer-contact-text">
-                <div>+1 (555) 123-4567</div>
+                <div>+94 716324240</div>
               </div>
             </div>
             <div className="footer-contact-item">
               <div className="footer-contact-icon">📍</div>
               <div className="footer-contact-text">
-                <div>San Francisco, CA</div>
+                <div>Kandy, Sri Lanka</div>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <div className="footer-copyright">
-              &copy; {currentYear} Dhana. All rights reserved.
+              &copy; {currentYear} Dhananjaya. All rights reserved.
             </div>
             <div className="footer-bottom-links">
               <a href="#privacy">Privacy Policy</a>

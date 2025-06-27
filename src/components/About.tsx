@@ -32,11 +32,12 @@ const About: React.FC = () => {
         </p>
         
         <div className="about-content">
-          <div className="about-text slide-in-left">
-            <div className="about-story">
+          {/* Top Row: My Story and My Approach */}
+          <div className="about-top-row">
+            <div className="about-story slide-in-left">
               <h3>My Story</h3>
               <p>
-                I'm a passionate UI/UX designer with over 3 years of experience crafting digital experiences 
+                I'm a passionate UI/UX designer with over 1 years of experience crafting digital experiences 
                 that not only look beautiful but also solve real user problems. My journey began with a 
                 fascination for how design can bridge the gap between technology and human needs.
               </p>
@@ -47,7 +48,7 @@ const About: React.FC = () => {
               </p>
             </div>
             
-            <div className="about-approach">
+            <div className="about-approach slide-in-right">
               <h3>My Approach</h3>
               <div className="approach-grid">
                 <div className="approach-item">
@@ -69,44 +70,31 @@ const About: React.FC = () => {
             </div>
           </div>
           
-          <div className="about-visual slide-in-right">
-            <div className="experience-timeline">
-              <div className="timeline-item">
-                <div className="timeline-dot"></div>
-                <div className="timeline-content">
-                  <h4>Senior UI/UX Designer</h4>
-                  <p>TechCorp Inc.</p>
-                  <span className="timeline-date">2023 - Present</span>
+          {/* Bottom Row: Personal Info Only */}
+          <div className="about-bottom-row">
+            <div className="personal-info slide-in-right">
+              <h3>Personal Info</h3>
+              <div className="info-cards-grid">
+                <div className="info-card">
+                  <h4>Education</h4>
+                  <p>Undergraduate at Sri Lanka Institute of Information Technology</p>
+                  <p>BSc (Hons) Information Technology</p>
                 </div>
-              </div>
-              <div className="timeline-item">
-                <div className="timeline-dot"></div>
-                <div className="timeline-content">
-                  <h4>UI/UX Designer</h4>
-                  <p>DesignStudio</p>
-                  <span className="timeline-date">2021 - 2023</span>
+                <div className="info-card">
+                  <h4>Location</h4>
+                  <p>Sri Lanka</p>
+                  <p>Available for remote work</p>
                 </div>
-              </div>
-              <div className="timeline-item">
-                <div className="timeline-dot"></div>
-                <div className="timeline-content">
-                  <h4>Junior Designer</h4>
-                  <p>Creative Agency</p>
-                  <span className="timeline-date">2020 - 2021</span>
+                <div className="info-card">
+                  <h4>Languages</h4>
+                  <p>English (Fluent)</p>
+                  <p>Sinhala (Native)</p>
                 </div>
-              </div>
-            </div>
-            
-            <div className="personal-info">
-              <div className="info-card">
-                <h4>Education</h4>
-                <p>Bachelor's in Design</p>
-                <p>Design Institute, 2020</p>
-              </div>
-              <div className="info-card">
-                <h4>Location</h4>
-                <p>San Francisco, CA</p>
-                <p>Available for remote work</p>
+                <div className="info-card">
+                  <h4>Interests</h4>
+                  <p>UI/UX Design</p>
+                  <p>Web Development</p>
+                </div>
               </div>
             </div>
           </div>
