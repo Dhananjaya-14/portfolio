@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Projects.css';
 
+// Import your project images here
+// import siennaRetreat from '../project-images/sienna-retreat.jpg';
+// import microimageClone from '../project-images/microimage-clone.jpg';
+// import fitnessApp from '../project-images/fitness-app.jpg';
+// import foodDelivery from '../project-images/food-delivery.jpg';
+// import musicApp from '../project-images/music-app.jpg';
+
 interface Project {
   id: number;
   title: string;
@@ -22,76 +29,65 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'E-Commerce Mobile App',
-      category: 'mobile',
-      image: '🛍️',
-      description: 'A comprehensive mobile shopping experience with intuitive navigation and seamless checkout flow.',
-      technologies: ['Figma', 'Principle', 'Sketch'],
-      duration: '3 months',
+      title: 'SIENNA RETREAT web UI',
+      category: 'web',
+      image: '/project-images/sienna-retreat.jpg',
+      description: 'A luxurious hotel booking experience with elegant visuals, intuitive room selection, and a hassle-free reservation process.',
+      technologies: ['Figma','Photoshop'],
+      duration: '1 months',
       role: 'Lead UI/UX Designer',
       features: ['User Research', 'Wireframing', 'Prototyping', 'User Testing'],
       link: '#'
     },
     {
       id: 2,
-      title: 'Banking Dashboard',
+      title: 'Microimage Clone',
       category: 'web',
-      image: '🏦',
-      description: 'Modern banking interface designed for both desktop and mobile users with advanced security features.',
-      technologies: ['Figma', 'Adobe XD', 'InVision'],
-      duration: '4 months',
-      role: 'Senior Designer',
-      features: ['Information Architecture', 'Design System', 'Accessibility', 'Responsive Design'],
+      image: '/project-images/microimage-clone.png',
+      description: 'A modern and responsive IT company interface featuring clean layouts, clear service highlights, and streamlined user interactions to showcase tech expertise.',
+      technologies: ['Figma', 'Adobe XD'],
+      duration: '1 months',
+      role: 'Lead UI/UX Designer',
+      features: ['Wireframing', 'Prototyping', 'Accessibility', 'Responsive Design'],
       link: '#'
     },
     {
       id: 3,
       title: 'Fitness Tracking App',
       category: 'mobile',
-      image: '💪',
+      image: '/project-images/fitness-app.png',
       description: 'Personal fitness companion with workout tracking, progress visualization, and social features.',
-      technologies: ['Figma', 'Framer', 'Principle'],
-      duration: '2 months',
+      technologies: ['Figma','Principle'],
+      duration: '1 months',
       role: 'UI/UX Designer',
-      features: ['User Journey Mapping', 'Micro-interactions', 'Data Visualization', 'Gamification'],
+      features: ['Wireframing', 'Prototyping', 'Accessibility', 'Responsive Design'],
       link: '#'
     },
     {
       id: 4,
-      title: 'Restaurant Booking Platform',
-      category: 'web',
-      image: '🍽️',
-      description: 'Streamlined restaurant discovery and booking platform with real-time availability and reviews.',
-      technologies: ['Figma', 'Sketch', 'InVision'],
-      duration: '3 months',
-      role: 'Lead Designer',
-      features: ['Competitive Analysis', 'User Flows', 'Prototyping', 'A/B Testing'],
+      title: 'Food Delivery App',
+      category: 'mobile',
+      image: '/project-images/food-delivery.png',
+      description: 'A vibrant and user-friendly food delivery experience with quick restaurant browsing, real-time order tracking, and a smooth checkout process.',
+      technologies: ['Figma','Photoshop'],
+      duration: '1 months',
+      role: 'Lead UI/UX Designer',
+      features: ['Competitive Analysis', 'Prototyping', 'Accessibility', 'Responsive Design'],
       link: '#'
     },
     {
       id: 5,
-      title: 'Travel Companion App',
+      title: '3D Music app',
       category: 'mobile',
-      image: '✈️',
-      description: 'All-in-one travel app with itinerary planning, booking management, and local recommendations.',
-      technologies: ['Figma', 'Adobe XD', 'Framer'],
-      duration: '5 months',
-      role: 'Senior UI/UX Designer',
-      features: ['User Research', 'Persona Development', 'Wireframing', 'Usability Testing'],
+      image: '/project-images/music-app.png',
+      description: 'A visually striking 3D music app interface featuring layered elements, animated transitions, and an engaging user journey that blends depth with functionality.',
+      technologies: ['Figma', 'Adobe XD'],
+      duration: '1 months',
+      role: 'Lead UI/UX Designer',
+      features: ['User Research', 'Wireframing', 'Prototyping', 'Accessibility', 'Responsive Design'],
       link: '#'
     },
-    {
-      id: 6,
-      title: 'Educational Platform',
-      category: 'web',
-      image: '📚',
-      description: 'Interactive learning platform with personalized content delivery and progress tracking.',
-      technologies: ['Figma', 'Principle', 'InVision'],
-      duration: '4 months',
-      role: 'UX Designer',
-      features: ['Learning Analytics', 'Content Strategy', 'User Onboarding', 'Feedback Systems'],
-      link: '#'
-    }
+    
   ];
 
   const filters = [
@@ -151,47 +147,49 @@ const Projects: React.FC = () => {
           {filteredProjects.map((project, index) => (
             <div key={project.id} className="project-card fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="project-image">
-                <div className="project-icon">{project.image}</div>
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  onError={(e) => {
+                    // Fallback to a placeholder if image doesn't exist
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.nextElementSibling?.classList.remove('hidden');
+                  }}
+                />
+                <div className="project-placeholder hidden">
+                  <div className="placeholder-icon">📱</div>
+                  <div className="placeholder-text">Add project image</div>
+                </div>
                 <div className="project-overlay">
-                  <button className="view-project-btn">View Project</button>
+                  <div className="project-links">
+                    <a href={project.link} className="project-link">
+                      View Project
+                    </a>
+                  </div>
                 </div>
               </div>
               
               <div className="project-content">
-                <div className="project-header">
-                  <h3>{project.title}</h3>
-                  <span className="project-category">{project.category}</span>
-                </div>
-                
+                <div className="project-category">{project.category}</div>
+                <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
                 
-                <div className="project-details">
-                  <div className="detail-item">
-                    <span className="detail-label">Role:</span>
-                    <span className="detail-value">{project.role}</span>
-                  </div>
-                  <div className="detail-item">
-                    <span className="detail-label">Duration:</span>
-                    <span className="detail-value">{project.duration}</span>
-                  </div>
+                <div className="project-tech">
+                  {project.technologies.map((tech: string, techIndex: number) => (
+                    <span key={techIndex} className="tech-tag">{tech}</span>
+                  ))}
                 </div>
                 
-                <div className="project-technologies">
-                  <h4>Technologies</h4>
-                  <div className="tech-tags">
-                    {project.technologies.map((tech: string, techIndex: number) => (
-                      <span key={techIndex} className="tech-tag">{tech}</span>
-                    ))}
+                <div className="project-stats">
+                  <div className="project-stat">
+                    <span className="stat-number">{project.role}</span>
+                    <span className="stat-label">Role</span>
                   </div>
-                </div>
-                
-                <div className="project-features">
-                  <h4>Key Features</h4>
-                  <ul className="features-list">
-                    {project.features.map((feature: string, featureIndex: number) => (
-                      <li key={featureIndex}>{feature}</li>
-                    ))}
-                  </ul>
+                  <div className="project-stat">
+                    <span className="stat-number">{project.duration}</span>
+                    <span className="stat-label">Duration</span>
+                  </div>
                 </div>
               </div>
             </div>

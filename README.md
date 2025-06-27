@@ -14,7 +14,7 @@ A modern, responsive portfolio website built with React and TypeScript, featurin
 
 To add your profile photo to the Hero section:
 
-1. **Add your photo** to the `public` folder:
+1. **Add your photo** to the `src` folder:
    - Name it `profile-image.jpg` (or update the path in `src/components/Hero.tsx`)
    - Recommended size: 400x400 pixels or larger (square aspect ratio)
    - Supported formats: JPG, PNG, WebP
@@ -22,7 +22,7 @@ To add your profile photo to the Hero section:
 2. **Update the image path** in `src/components/Hero.tsx` if needed:
    ```jsx
    <img 
-     src="/your-photo-name.jpg" 
+     src={profileImage} 
      alt="Your Name - UI/UX Designer"
    />
    ```
@@ -32,6 +32,38 @@ To add your profile photo to the Hero section:
    - Show a beautiful glow effect
    - Scale and zoom on hover
    - Fall back to a placeholder if the image doesn't load
+
+## 🖼️ Adding Project Images
+
+To add your project images to the Projects section:
+
+1. **Create a project-images folder** in the `public` directory:
+   ```bash
+   mkdir public/project-images
+   ```
+
+2. **Add your project images** to `public/project-images/`:
+   - `sienna-retreat.jpg` - SIENNA RETREAT web UI
+   - `microimage-clone.jpg` - Microimage Clone
+   - `fitness-app.jpg` - Fitness Tracking App
+   - `food-delivery.jpg` - Food Delivery App
+   - `music-app.jpg` - 3D Music app
+
+3. **Image specifications**:
+   - **Recommended size**: 600x400 pixels (3:2 aspect ratio)
+   - **Supported formats**: JPG, PNG, WebP
+   - **File size**: Keep under 500KB for fast loading
+
+4. **Update image paths** in `src/components/Projects.tsx` if needed:
+   ```jsx
+   image: '/project-images/your-image-name.jpg'
+   ```
+
+5. **The images will automatically**:
+   - Display in project cards with hover effects
+   - Scale and zoom on hover
+   - Show overlay with "View Project" button
+   - Fall back to placeholder if image doesn't load
 
 ## 🛠️ Installation & Setup
 

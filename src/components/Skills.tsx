@@ -45,10 +45,7 @@ const Skills: React.FC = () => {
   const tools = [
     { name: 'Figma', icon: '🎨', level: 'Expert' },
     { name: 'Adobe XD', icon: '✨', level: 'Advanced' },
-    { name: 'Sketch', icon: '📱', level: 'Advanced' },
-    { name: 'InVision', icon: '🔗', level: 'Expert' },
-    { name: 'Principle', icon: '🎬', level: 'Intermediate' },
-    { name: 'Framer', icon: '🚀', level: 'Advanced' }
+    { name: 'Principle', icon: '🎬', level: 'Intermediate' }
   ];
 
   const expertise = [
@@ -130,21 +127,21 @@ const Skills: React.FC = () => {
           <div className="certifications-grid">
             <div className="certification-card">
               <div className="cert-icon">🏆</div>
-              <h4>Google UX Design</h4>
-              <p>Professional Certificate</p>
-              <span className="cert-date">2023</span>
+              <h4>Comprehensive UI/UX Design</h4>
+              <p>Professional Certificate(FSD Academy)</p>
+              <span className="cert-date">2025</span>
             </div>
             <div className="certification-card">
               <div className="cert-icon">🎓</div>
-              <h4>Interaction Design Foundation</h4>
-              <p>UX Design Course</p>
-              <span className="cert-date">2022</span>
+              <h4>Using AI Tools for UX Design</h4>
+              <p>LinkedIn Certificat</p>
+              <span className="cert-date">2025</span>
             </div>
             <div className="certification-card">
               <div className="cert-icon">⭐</div>
               <h4>Figma Advanced</h4>
               <p>Design Systems & Prototyping</p>
-              <span className="cert-date">2022</span>
+              <span className="cert-date">2023</span>
             </div>
           </div>
         </div>

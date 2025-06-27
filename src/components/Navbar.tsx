@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
       <div className="container">
         <div className="navbar-content">
           <div className="navbar-brand">
-            <span className="brand-text">Dhana</span>
+            <span className="brand-text">Dhananjaya</span>
             <span className="brand-subtitle">UI/UX Designer</span>
           </div>
 
