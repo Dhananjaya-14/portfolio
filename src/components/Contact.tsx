@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 interface ContactInfo {
@@ -55,18 +56,43 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+    try {
+      // EmailJS configuration
+      // You'll need to replace these with your actual EmailJS credentials
+      const serviceId = 'service_t4r44f5'; // Replace with your service ID
+      const templateId = 'template_jagfadq'; // Replace with your template ID
+      const publicKey = 'lUazy5-w_gy1IxFQR'; // Replace with your public key
       
-      // Reset status after 3 seconds
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Dhananjaya', // Your name
+        to_email: 'dhananjaya2859dk@gmail.com' // Your email
+      };
+
+      const result = await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      if (result.status === 200) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      
+      // Reset status after 5 seconds
       setTimeout(() => {
         setSubmitStatus('idle');
-      }, 3000);
-    }, 2000);
+      }, 5000);
+    }
   };
 
   const contactInfo: ContactInfo[] = [
