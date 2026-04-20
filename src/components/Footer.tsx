@@ -26,8 +26,8 @@ const Footer: React.FC = () => {
           <div className="footer-brand">
             <h3>Dhananjaya</h3>
             <p className="footer-description">
-              Passionate UI/UX designer creating beautiful, functional, and user-centered digital experiences. 
-              Let's bring your ideas to life with innovative design solutions.
+              Full-stack developer building reliable APIs and web clients. Based in Kandy, Sri Lanka
+              — available for remote work.
             </p>
             <div className="footer-social">
               <a href="https://www.linkedin.com/in/dhananjaya-bulumulla-777a6723b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-social-link">
@@ -59,11 +59,10 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h4>Services</h4>
             <ul className="footer-links">
-              <li><a href="#ui-design">UI Design</a></li>
-              <li><a href="#ux-design">UX Design</a></li>
-              <li><a href="#web-design">Web Design</a></li>
-              <li><a href="#mobile-design">Mobile Design</a></li>
-              <li><a href="#branding">Branding</a></li>
+              <li><a href="#projects">Web applications</a></li>
+              <li><a href="#projects">REST &amp; GraphQL APIs</a></li>
+              <li><a href="#projects">Database &amp; integrations</a></li>
+              <li><a href="#contact">Maintenance &amp; support</a></li>
             </ul>
           </div>
           

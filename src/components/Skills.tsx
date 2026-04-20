@@ -33,49 +33,53 @@ const Skills: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const designSkills = [
-    { name: 'UI Design', progress: 95 },
-    { name: 'UX Research', progress: 90 },
-    { name: 'Wireframing', progress: 92 },
-    { name: 'Prototyping', progress: 88 },
-    { name: 'Design Systems', progress: 85 },
-    { name: 'User Testing', progress: 87 }
+  const coreSkills = [
+    { name: 'JavaScript / TypeScript', progress: 92 },
+    { name: 'React & modern front end', progress: 90 },
+    { name: 'REST APIs & Node.js', progress: 88 },
+    { name: 'Databases (SQL & NoSQL)', progress: 85 },
+    { name: 'Git, testing & tooling', progress: 86 },
+    { name: 'Deployment & Dev basics', progress: 82 }
   ];
 
   const tools = [
-    { name: 'Figma', icon: '🎨', level: 'Expert' },
-    { name: 'Adobe XD', icon: '✨', level: 'Advanced' },
-    { name: 'Principle', icon: '🎬', level: 'Intermediate' }
+    { name: 'VS Code', icon: '💻', level: 'Daily' },
+    { name: 'Git & GitHub', icon: '🔗', level: 'Advanced' },
+    { name: 'Postman / API tools', icon: '📡', level: 'Advanced' }
   ];
 
   const expertise = [
     {
-      category: 'Design Process',
-      skills: ['User Research', 'Persona Development', 'Journey Mapping', 'Information Architecture']
+      category: 'Front end',
+      skills: ['React', 'Responsive UI', 'State management', 'Performance basics']
     },
     {
-      category: 'Visual Design',
-      skills: ['Typography', 'Color Theory', 'Layout Design', 'Icon Design']
+      category: 'Back end',
+      skills: ['Node.js', 'Express-style APIs', 'Auth & sessions', 'Validation & errors']
     },
     {
-      category: 'Interaction Design',
-      skills: ['Micro-interactions', 'Animation', 'Responsive Design', 'Accessibility']
+      category: 'Data & delivery',
+      skills: ['MongoDB / PostgreSQL', 'Schema design', 'Migrations mindset', 'Environment config']
     }
   ];
 
   return (
     <section id="skills" className="skills section" ref={skillsRef}>
       <div className="container">
-        <h2 className="section-title fade-in">Skills & Expertise</h2>
+        <span className="section-eyebrow fade-in">Capabilities</span>
+        <h2 className="section-title fade-in">
+          <span className="section-title-gradient">Skills &amp; expertise</span>
+        </h2>
         <p className="section-subtitle fade-in">
-          A comprehensive toolkit for creating exceptional user experiences
+          Languages, frameworks, and practices I use to ship full-stack features — adjust the list to
+          match your exact stack anytime.
         </p>
 
         <div className="skills-content">
           <div className="skills-section slide-in-left">
-            <h3>Core Skills</h3>
+            <h3>Core skills</h3>
             <div className="skills-grid">
-              {designSkills.map((skill, index) => (
+              {coreSkills.map((skill, index) => (
                 <div key={index} className="skill-item">
                   <div className="skill-header">
                     <span className="skill-name">{skill.name}</span>
@@ -93,7 +97,7 @@ const Skills: React.FC = () => {
           </div>
 
           <div className="tools-section slide-in-right">
-            <h3>Design Tools</h3>
+            <h3>Stack &amp; tools</h3>
             <div className="tools-grid">
               {tools.map((tool, index) => (
                 <div key={index} className="tool-card">
@@ -107,7 +111,7 @@ const Skills: React.FC = () => {
         </div>
 
         <div className="expertise-section fade-in">
-          <h3>Areas of Expertise</h3>
+          <h3>How I work across the stack</h3>
           <div className="expertise-grid">
             {expertise.map((area, index) => (
               <div key={index} className="expertise-card">
@@ -123,25 +127,25 @@ const Skills: React.FC = () => {
         </div>
 
         <div className="certifications-section fade-in">
-          <h3>Certifications & Training</h3>
+          <h3>Learning &amp; credentials</h3>
           <div className="certifications-grid">
             <div className="certification-card">
               <div className="cert-icon">🏆</div>
-              <h4>Comprehensive UI/UX Design</h4>
-              <p>Professional Certificate(FSD Academy)</p>
-              <span className="cert-date">2025</span>
+              <h4>BSc (Hons) Information Technology</h4>
+              <p>SLIIT — software engineering, databases, and web systems</p>
+              <span className="cert-date">SLIIT</span>
             </div>
             <div className="certification-card">
               <div className="cert-icon">🎓</div>
-              <h4>Using AI Tools for UX Design</h4>
-              <p>LinkedIn Certificat</p>
+              <h4>Professional courses</h4>
+              <p>LinkedIn Learning &amp; other platforms — web &amp; tooling</p>
               <span className="cert-date">2025</span>
             </div>
             <div className="certification-card">
               <div className="cert-icon">⭐</div>
-              <h4>Figma Advanced</h4>
-              <p>Design Systems & Prototyping</p>
-              <span className="cert-date">2023</span>
+              <h4>Self-directed builds</h4>
+              <p>Portfolio apps, APIs, and integrations — see Projects</p>
+              <span className="cert-date">Ongoing</span>
             </div>
           </div>
         </div>

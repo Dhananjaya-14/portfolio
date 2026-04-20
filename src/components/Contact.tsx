@@ -100,13 +100,13 @@ const Contact: React.FC = () => {
       icon: '📧',
       title: 'Email',
       value: 'dhananjaya2859dk@gmail.com',
-      link: 'mailto:dhana@example.com'
+      link: 'mailto:dhananjaya2859dk@gmail.com'
     },
     {
       icon: '📱',
       title: 'Phone',
       value: '+94 716324240',
-      link: 'tel:+15551234567'
+      link: 'tel:+94716324240'
     },
     {
       icon: '📍',
@@ -126,18 +126,20 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="contact section" ref={contactRef}>
       <div className="container">
-        <h2 className="section-title fade-in">Get In Touch</h2>
+        <span className="section-eyebrow fade-in">Contact</span>
+        <h2 className="section-title fade-in">
+          <span className="section-title-gradient">Let&apos;s talk</span>
+        </h2>
         <p className="section-subtitle fade-in">
-          Ready to start your next project? Let's create something amazing together!
+          Share a short brief or ask a question — I typically reply within one business day.
         </p>
 
         <div className="contact-content">
           <div className="contact-info slide-in-left">
-            <h3>Let's Connect</h3>
+            <h3>Direct lines</h3>
             <p className="contact-description">
-              I'm always excited to hear about new projects and opportunities. 
-              Whether you have a specific project in mind or just want to chat 
-              about design, feel free to reach out!
+              Prefer email or phone? Use the details below. For project inquiries, the form is
+              usually fastest.
             </p>
 
             <div className="contact-methods">
@@ -165,7 +167,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="contact-form slide-in-right">
-            <h3>Send a Message</h3>
+            <h3>Send a message</h3>
             
             {submitStatus === 'success' && (
               <div className="success-message">

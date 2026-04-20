@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import './Projects.css';
 
 // Import your project images here
@@ -21,22 +21,26 @@ interface Project {
   link: string;
 }
 
+const categoryLabel = (category: string) =>
+  category === 'web' ? 'Web' : category === 'mobile' ? 'Mobile' : category;
+
 const Projects: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
   const projectsRef = useRef<HTMLDivElement>(null);
 
-  const projects: Project[] = [
+  const projects = useMemo<Project[]>(
+    () => [
     {
       id: 1,
       title: 'SIENNA RETREAT web UI',
       category: 'web',
       image: '/project-images/sienna-retreat.jpg',
       description: 'A luxurious hotel booking experience with elegant visuals, intuitive room selection, and a hassle-free reservation process.',
-      technologies: ['Figma','Photoshop'],
-      duration: '1 months',
-      role: 'Lead UI/UX Designer',
-      features: ['User Research', 'Wireframing', 'Prototyping', 'User Testing'],
+      technologies: ['React', 'TypeScript', 'Node.js'],
+      duration: '1 month',
+      role: 'Full-stack developer',
+      features: ['REST API', 'Auth', 'Responsive UI', 'Deployment'],
       link: '#'
     },
     {
@@ -45,10 +49,10 @@ const Projects: React.FC = () => {
       category: 'web',
       image: '/project-images/microimage-clone.png',
       description: 'A modern and responsive IT company interface featuring clean layouts, clear service highlights, and streamlined user interactions to showcase tech expertise.',
-      technologies: ['Figma', 'Adobe XD'],
-      duration: '1 months',
-      role: 'Lead UI/UX Designer',
-      features: ['Wireframing', 'Prototyping', 'Accessibility', 'Responsive Design'],
+      technologies: ['React', 'CSS', 'Express'],
+      duration: '1 month',
+      role: 'Full-stack developer',
+      features: ['SSR-ready structure', 'API integration', 'SEO basics', 'Performance'],
       link: '#'
     },
     {
@@ -57,10 +61,10 @@ const Projects: React.FC = () => {
       category: 'mobile',
       image: '/project-images/fitness-app.png',
       description: 'Personal fitness companion with workout tracking, progress visualization, and social features.',
-      technologies: ['Figma','Principle'],
-      duration: '1 months',
-      role: 'UI/UX Designer',
-      features: ['Wireframing', 'Prototyping', 'Accessibility', 'Responsive Design'],
+      technologies: ['React Native', 'TypeScript', 'Firebase'],
+      duration: '1 month',
+      role: 'Full-stack developer',
+      features: ['Offline-aware UI', 'API sync', 'State management', 'Analytics hooks'],
       link: '#'
     },
     {
@@ -69,10 +73,10 @@ const Projects: React.FC = () => {
       category: 'mobile',
       image: '/project-images/food-delivery.png',
       description: 'A vibrant and user-friendly food delivery experience with quick restaurant browsing, real-time order tracking, and a smooth checkout process.',
-      technologies: ['Figma','Photoshop'],
-      duration: '1 months',
-      role: 'Lead UI/UX Designer',
-      features: ['Competitive Analysis', 'Prototyping', 'Accessibility', 'Responsive Design'],
+      technologies: ['Next.js', 'PostgreSQL', 'Stripe API'],
+      duration: '1 month',
+      role: 'Full-stack developer',
+      features: ['Payments', 'Real-time orders', 'Role-based access', 'Admin tools'],
       link: '#'
     },
     {
@@ -81,14 +85,19 @@ const Projects: React.FC = () => {
       category: 'mobile',
       image: '/project-images/music-app.png',
       description: 'A visually striking 3D music app interface featuring layered elements, animated transitions, and an engaging user journey that blends depth with functionality.',
-      technologies: ['Figma', 'Adobe XD'],
-      duration: '1 months',
-      role: 'Lead UI/UX Designer',
-      features: ['User Research', 'Wireframing', 'Prototyping', 'Accessibility', 'Responsive Design'],
+      technologies: ['React', 'Web Audio API', 'Node.js'],
+      duration: '1 month',
+      role: 'Full-stack developer',
+      features: ['Media streaming', 'Playlists API', 'Animations', 'Responsive layout'],
       link: '#'
-    },
-    
-  ];
+    }
+  ],
+    []
+  );
+
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   const filters = [
     { id: 'all', label: 'All Projects' },
@@ -126,14 +135,19 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="projects section" ref={projectsRef}>
       <div className="container">
-        <h2 className="section-title fade-in">Featured Projects</h2>
+        <span className="section-eyebrow fade-in">Portfolio</span>
+        <h2 className="section-title fade-in">
+          <span className="section-title-gradient">Selected work</span>
+        </h2>
         <p className="section-subtitle fade-in">
-          A showcase of my recent work, demonstrating user-centered design solutions
+          Web and app-style builds — swap in your real stack, links, and case-study write-ups when
+          you&apos;re ready.
         </p>
 
         <div className="projects-filters fade-in">
           {filters.map((filter) => (
             <button
+              type="button"
               key={filter.id}
               className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
               onClick={() => setActiveFilter(filter.id)}
@@ -171,7 +185,7 @@ const Projects: React.FC = () => {
               </div>
               
               <div className="project-content">
-                <div className="project-category">{project.category}</div>
+                <div className="project-category">{categoryLabel(project.category)}</div>
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
                 
@@ -198,8 +212,10 @@ const Projects: React.FC = () => {
 
         <div className="projects-cta fade-in">
           <h3>Interested in working together?</h3>
-          <p>Let's discuss your next project and create something amazing together.</p>
-          <button className="btn btn-primary">Get In Touch</button>
+          <p>Tell me about your product, timeline, and audience — I&apos;ll follow up with next steps.</p>
+          <button type="button" className="btn btn-primary" onClick={scrollToContact}>
+            Start a conversation
+          </button>
         </div>
       </div>
     </section>

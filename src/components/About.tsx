@@ -26,9 +26,13 @@ const About: React.FC = () => {
   return (
     <section id="about" className="about section" ref={aboutRef}>
       <div className="container">
-        <h2 className="section-title fade-in">About Me</h2>
+        <span className="section-eyebrow fade-in">Introduction</span>
+        <h2 className="section-title fade-in">
+          <span className="section-title-gradient">About me</span>
+        </h2>
         <p className="section-subtitle fade-in">
-          Passionate about creating meaningful digital experiences that connect people with technology
+          I enjoy turning requirements into working software — from database and API design to
+          polished, responsive interfaces.
         </p>
         
         <div className="about-content">
@@ -37,14 +41,14 @@ const About: React.FC = () => {
             <div className="about-story slide-in-left">
               <h3>My Story</h3>
               <p>
-                I'm a passionate UI/UX designer with over 1 years of experience crafting digital experiences 
-                that not only look beautiful but also solve real user problems. My journey began with a 
-                fascination for how design can bridge the gap between technology and human needs.
+                I&apos;m a full-stack developer with over a year of experience building web applications
+                that are reliable, scalable, and straightforward to extend. I&apos;m happiest when
+                backend logic, data, and frontend behavior all line up cleanly.
               </p>
               <p>
-                I believe that great design is invisible - it guides users seamlessly through their journey 
-                while creating moments of delight. Every pixel, every interaction, and every decision is 
-                made with the user in mind.
+                I believe good software is tested, documented enough to onboard others, and structured so
+                the next feature doesn&apos;t become a rewrite. I stay curious about new tools but default
+                to patterns that teams can maintain.
               </p>
             </div>
             
@@ -53,18 +57,18 @@ const About: React.FC = () => {
               <div className="approach-grid">
                 <div className="approach-item">
                   <div className="approach-icon">🎯</div>
-                  <h4>User-Centered</h4>
-                  <p>Every design decision starts with understanding user needs and behaviors</p>
+                  <h4>Product-focused</h4>
+                  <p>Clarify requirements, edge cases, and priorities before writing code</p>
                 </div>
                 <div className="approach-item">
                   <div className="approach-icon">🔍</div>
-                  <h4>Research-Driven</h4>
-                  <p>Data and insights guide my design process to ensure effective solutions</p>
+                  <h4>Quality-minded</h4>
+                  <p>Validation, error handling, and sensible defaults for real users</p>
                 </div>
                 <div className="approach-item">
                   <div className="approach-icon">✨</div>
-                  <h4>Innovative</h4>
-                  <p>Pushing boundaries while maintaining usability and accessibility standards</p>
+                  <h4>End-to-end</h4>
+                  <p>APIs, persistence, auth, and UI wired together as one system</p>
                 </div>
               </div>
             </div>
@@ -92,8 +96,8 @@ const About: React.FC = () => {
                 </div>
                 <div className="info-card">
                   <h4>Interests</h4>
-                  <p>UI/UX Design</p>
-                  <p>Web Development</p>
+                  <p>Web APIs &amp; cloud</p>
+                  <p>React &amp; TypeScript</p>
                 </div>
               </div>
             </div>

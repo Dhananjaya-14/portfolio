@@ -33,23 +33,74 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="hero" ref={heroRef}>
-      <div className="hero-background">
-        <div className="gradient-orb orb-1"></div>
-        <div className="gradient-orb orb-2"></div>
-        <div className="gradient-orb orb-3"></div>
+      <div className="hero-background" aria-hidden="true">
+        <div className="hero-grid" />
+        <div className="gradient-orb orb-1" />
+        <div className="gradient-orb orb-2" />
+        <div className="gradient-orb orb-3" />
       </div>
-      
+
       <div className="container">
         <div className="hero-content">
+          <div className="hero-text">
+            <p className="hero-badge fade-in">
+              <span className="hero-badge-dot" />
+              Open to freelance &amp; collaborations
+            </p>
+            <h1 className="hero-title fade-in">
+              <span className="greeting">Hello — I&apos;m</span>
+              <span className="name">Dhananjaya</span>
+              <span className="title">Full-stack developer</span>
+            </h1>
+
+            <p className="hero-description fade-in">
+              I build end-to-end web applications — solid APIs, databases, and performant
+              front ends. I care about clean architecture, maintainable code, and shipping features
+              that work reliably in production.
+            </p>
+
+            <div className="hero-stats fade-in">
+              <div className="stat">
+                <span className="stat-number">10+</span>
+                <span className="stat-label">Projects</span>
+              </div>
+              <div className="stat">
+                <span className="stat-number">1+</span>
+                <span className="stat-label">Years experience</span>
+              </div>
+              <div className="stat">
+                <span className="stat-number">100%</span>
+                <span className="stat-label">Client focus</span>
+              </div>
+            </div>
+
+            <div className="hero-buttons fade-in">
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={() => scrollToSection('projects')}
+              >
+                View work
+              </button>
+              <button
+                type="button"
+                className="btn btn-outline"
+                onClick={() => scrollToSection('contact')}
+              >
+                Contact
+              </button>
+            </div>
+          </div>
+
           <div className="hero-visual">
             <div className="profile-image-container">
+              <div className="profile-frame" />
               <div className="profile-image">
-                <img 
-                  src={profileImage} 
-                  alt="Dhananjaya - UI/UX Designer"
+                <img
+                  src={profileImage}
+                  alt="Portrait of Dhananjaya, full-stack developer"
                   className="profile-photo"
                   onError={(e) => {
-                    // Fallback to a placeholder if image doesn't exist
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                     target.nextElementSibling?.classList.remove('hidden');
@@ -60,62 +111,18 @@ const Hero: React.FC = () => {
                   <div className="placeholder-text">Add your photo</div>
                 </div>
               </div>
-              <div className="profile-glow"></div>
-            </div>
-          </div>
-          
-          <div className="hero-text">
-            <h1 className="hero-title fade-in">
-              <span className="greeting">Hello, I'm</span>
-              <span className="name">Dhananjaya</span>
-              <span className="title">UI/UX Designer</span>
-            </h1>
-            
-            <p className="hero-description fade-in">
-              Crafting digital experiences that blend creativity with functionality. 
-              I transform ideas into intuitive, beautiful, and user-centered designs 
-              that make a lasting impact.
-            </p>
-            
-            <div className="hero-stats fade-in">
-              <div className="stat">
-                <span className="stat-number">10+</span>
-                <span className="stat-label">Projects</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">1+</span>
-                <span className="stat-label">Years</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">100%</span>
-                <span className="stat-label">Satisfaction</span>
-              </div>
-            </div>
-            
-            <div className="hero-buttons fade-in">
-              <button 
-                className="btn btn-primary"
-                onClick={() => scrollToSection('projects')}
-              >
-                View My Work
-              </button>
-              <button 
-                className="btn btn-outline"
-                onClick={() => scrollToSection('contact')}
-              >
-                Get In Touch
-              </button>
+              <div className="profile-glow" aria-hidden="true" />
             </div>
           </div>
         </div>
       </div>
-      
+
       <div className="scroll-indicator">
-        <div className="scroll-arrow"></div>
-        <span>Scroll to explore</span>
+        <div className="scroll-arrow" />
+        <span>Scroll</span>
       </div>
     </section>
   );
 };
 
-export default Hero; 
+export default Hero;
