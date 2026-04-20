@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#667eea" />
+    <meta name="theme-color" content="#070708" />
     <meta
       name="description"
-      content="Dhana - UI/UX Designer Portfolio. Creating beautiful, user-centered digital experiences with modern design solutions."
+      content="Dhananjaya — Full-stack developer portfolio. Web applications, APIs, and production-focused engineering."
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
@@ -27,8 +27,48 @@
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Dhana - UI/UX Designer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <title>Dhananjaya — Full-Stack Developer</title>
+    <!--
+      CRA's dev overlay treats uncaught errors from injected extension scripts (e.g. wallets)
+      as app errors. Stop propagation only when the failing script URL is an extension origin.
+    -->
+    <script>
+      (function () {
+        function isExtensionUrl(url) {
+          return (
+            typeof url === 'string' &&
+            (url.indexOf('chrome-extension://') === 0 ||
+              url.indexOf('moz-extension://') === 0 ||
+              url.indexOf('safari-web-extension://') === 0)
+          );
+        }
+        window.addEventListener(
+          'error',
+          function (e) {
+            if (isExtensionUrl(e.filename)) {
+              e.stopImmediatePropagation();
+            }
+          },
+          true
+        );
+        window.addEventListener(
+          'unhandledrejection',
+          function (e) {
+            var r = e.reason;
+            var stack =
+              r && typeof r === 'object' && r.stack ? String(r.stack) : '';
+            if (
+              stack.indexOf('chrome-extension://') !== -1 ||
+              stack.indexOf('moz-extension://') !== -1
+            ) {
+              e.stopImmediatePropagation();
+            }
+          },
+          true
+        );
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

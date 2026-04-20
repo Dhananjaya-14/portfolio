@@ -15,7 +15,7 @@ function App() {
     // Simulate loading time for smooth animation
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 700);
 
     return () => clearTimeout(timer);
   }, []);
@@ -25,7 +25,7 @@ function App() {
       <div className="loading-screen">
         <div className="loading-animation">
           <div className="loading-circle"></div>
-          <div className="loading-text">Loading Portfolio...</div>
+          <div className="loading-text">Loading</div>
         </div>
       </div>
     );
